@@ -1,0 +1,36 @@
+Adjacency Matrix (11 nodes):
+      0  1  2  3  4  5  6  7  8  9 10 
+ 0 |  0  1  1  1  0  0  0  0  0  0  0   root
+ 1 |  1  0  0  0  1  1  0  0  0  0  0   home
+ 2 |  1  0  0  0  0  0  0  0  0  1  0   etc
+ 3 |  1  0  0  0  0  0  0  0  0  0  1   var
+ 4 |  0  1  0  0  0  0  1  1  0  0  0   user1
+ 5 |  0  1  0  0  0  0  0  0  1  0  0   user2
+ 6 |  0  0  0  0  1  0  0  0  0  0  0   notes.txt
+ 7 |  0  0  0  0  1  0  0  0  0  0  0   photo.jpg
+ 8 |  0  0  0  0  0  1  0  0  0  0  0   report.pdf
+ 9 |  0  0  1  0  0  0  0  0  0  0  0   config.cfg
+10 |  0  0  0  1  0  0  0  0  0  0  0   log.txt
+
+--- Searching for "report.pdf" starting from "root" ---
+BFS order: root home etc var user1 user2 config.cfg log.txt notes.txt photo.jpg report.pdf 
+BFS result: File FOUND
+DFS order: root home user1 notes.txt photo.jpg user2 report.pdf 
+DFS result: File FOUND
+
+--- Searching for "log.txt" starting from "root" ---
+BFS order: root home etc var user1 user2 config.cfg log.txt 
+BFS result: File FOUND
+DFS order: root home user1 notes.txt photo.jpg user2 report.pdf etc config.cfg var log.txt 
+DFS result: File FOUND
+
+--- Searching for "missing.doc" starting from "root" ---
+BFS order: root home etc var user1 user2 config.cfg log.txt notes.txt photo.jpg report.pdf 
+BFS result: File NOT found
+DFS order: root home user1 notes.txt photo.jpg user2 report.pdf etc config.cfg var log.txt 
+DFS result: File NOT found
+
+--- Searching for "config.cfg" starting from "home" ---
+BFS order: home root user1 user2 etc var notes.txt photo.jpg report.pdf config.cfg 
+BFS result: File FOUND
+DFS order: home root etc config.cfg 
